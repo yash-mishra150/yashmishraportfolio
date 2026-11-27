@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+:root {
+  --theme-bg: #0e0e0b;
+  --theme-accent: #afe607;
+  --theme-accent-contrast: #0e0e0b;
+}
+
+/* Text-selection highlight follows the active duotone theme.
+   app/page.tsx overrides these vars on <main> from React theme state —
+   the :root values above only serve as static fallbacks. */
+::selection {
+  background-color: var(--theme-accent);
+  color: var(--theme-accent-contrast);
+  text-shadow: none;
+}
+::-moz-selection {
+  background-color: var(--theme-accent);
+  color: var(--theme-accent-contrast);
+  text-shadow: none;
+}
+
+/* next/font variables (--font-sans, --font-poster, --font-caveat, ...) are set
+   on <html> by layout.tsx and referenced directly via var() — do NOT re-declare
+   them here; same-name @theme entries create circular references and kill the font. */
